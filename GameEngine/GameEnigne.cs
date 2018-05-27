@@ -35,6 +35,10 @@ namespace GameEngine
 
         public bool AddPlayer(String name = "", String token = "")
         {
+            if (this._GetNumberOfPlayers() == 2)
+            {
+                return false;
+            }
             this._SetNumberOfPlayers(this._GetNumberOfPlayers() + 1);
 
             return true;
