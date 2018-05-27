@@ -305,13 +305,9 @@ namespace GameEngine
             return false;
         }
 
-        public Player GetWinPlayer()
+        public Player GetCurrentPlayer()
         {
             int step = this.GetStep();
-            if (step != 0)
-            {
-                step = step - 1;
-            }
 
             Player currentPlayer = new Player();
             int count = 0;
@@ -326,6 +322,51 @@ namespace GameEngine
             }
 
             return currentPlayer;
+        }
+
+        public Player GetWinPlayer()
+        {
+            int step = this.GetStep();
+            if (step == 0)
+            {
+                step = 1;
+            }
+            else
+            {
+                step = 0;
+            }
+
+            Player winPlayer = new Player();
+            int count = 0;
+            foreach (Player player in this.GetPlayers())
+            {
+                if (count == step)
+                {
+                    winPlayer = player;
+                    break;
+                }
+                count++;
+            }
+
+            return winPlayer;
+        }
+
+        public void NewGame(int size = 3, 
+            String name1 = "Player1", String token1 = "X", int id1 = 1,
+            String name2 = "Player2", String token2 = "Y", int id2 = 2)
+        {
+            this.CreateGamePlace(size);
+            this.AddPlayer(name1, token1, id1);
+            this.AddPlayer(name2, token2, id2);
+            Random rand = new Random();
+            if (rand.Next(0, 100) > 50)
+            {
+                this.SetStep(0);
+            }
+            else
+            {
+                this.SetStep(1);
+            }
         }
     }
 }
