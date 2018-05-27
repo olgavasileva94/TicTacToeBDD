@@ -68,6 +68,7 @@ namespace GameEngine
     {
         private ArrayList players;
         private String[,] gamePlace;
+        private int step;
 
         //constructors
 
@@ -89,6 +90,11 @@ namespace GameEngine
             this.players = players;
         }
 
+        private void SetStep(int step)
+        {
+            this.step = step;
+        }
+
         //getters
 
         private String[,] GetGamePlace()
@@ -99,6 +105,11 @@ namespace GameEngine
         private ArrayList GetPlayers()
         {
             return this.players;
+        }
+
+        private int GetStep()
+        {
+            return this.step;
         }
 
         //methods
@@ -190,6 +201,11 @@ namespace GameEngine
         public String GetCellValue(int x, int y)
         {
             return this.gamePlace[x, y];
+        }
+
+        public bool MakeAStep(int x, int y)
+        {
+            return true;
         }
     }
 }

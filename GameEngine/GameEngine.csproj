@@ -67,6 +67,12 @@
     </Compile>
     <Compile Include="Features\Steps\AddingPlayersSteps.cs" />
     <Compile Include="Features\Steps\CreateGamePlaceSteps.cs" />
+    <Compile Include="Features\Make a step.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Make a step.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Steps\MakeAStepSteps.cs" />
     <Compile Include="Features\Steps\SetCellValueOnGamePlaceSteps.cs" />
     <Compile Include="GameEnigne.cs" />
     <Compile Include="Features\Adding players.feature.cs">
@@ -89,6 +95,10 @@
     <None Include="Features\Set cell value on game place.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Set cell value on game place.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Make a step.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Make a step.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
