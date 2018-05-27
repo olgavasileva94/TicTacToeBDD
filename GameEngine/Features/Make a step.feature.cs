@@ -337,6 +337,58 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Make a two step in cell x = 0 y = 0")]
+        [NUnit.Framework.CategoryAttribute("make")]
+        [NUnit.Framework.CategoryAttribute("a")]
+        [NUnit.Framework.CategoryAttribute("two")]
+        [NUnit.Framework.CategoryAttribute("step")]
+        [NUnit.Framework.CategoryAttribute("in")]
+        [NUnit.Framework.CategoryAttribute("cell")]
+        [NUnit.Framework.CategoryAttribute("x")]
+        [NUnit.Framework.CategoryAttribute("=")]
+        [NUnit.Framework.CategoryAttribute("0")]
+        [NUnit.Framework.CategoryAttribute("y")]
+        [NUnit.Framework.CategoryAttribute("=")]
+        [NUnit.Framework.CategoryAttribute("0")]
+        public virtual void MakeATwoStepInCellX0Y0()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Make a two step in cell x = 0 y = 0", new string[] {
+                        "make",
+                        "a",
+                        "two",
+                        "step",
+                        "in",
+                        "cell",
+                        "x",
+                        "=",
+                        "0",
+                        "y",
+                        "=",
+                        "0"});
+#line 47
+this.ScenarioSetup(scenarioInfo);
+#line 48
+ testRunner.Given("I have a game engine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 49
+ testRunner.When("I create game place size 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 50
+ testRunner.And("I add a player with parameters (name = \"player1\" token = \"X\" id = 1) to the game " +
+                    "engine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And("I add a player with parameters (name = \"player2\" token = \"Y\" id = 2) to the game " +
+                    "engine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And("I make a step in cell x = 0 y = 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And("I make a step in cell x = 0 y = 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.Then("The value of the cell in x = 0 y = 0 must equal the value of the player token wit" +
+                    "h id = 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

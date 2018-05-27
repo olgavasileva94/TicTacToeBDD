@@ -10,7 +10,16 @@ namespace GameEngine.Features.Steps
         [When(@"I make a step in cell x = (.*) y = (.*)")]
         public void WhenIMakeAStepInCellXY(int p0, int p1)
         {
-            AddingPlayersSteps.gameEngine.MakeAStep(p0, p1);
+            bool result;
+            if (AddingPlayersSteps.gameEngine.GetCellValue(p0, p1) == "")
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
+            Assert.AreEqual(AddingPlayersSteps.gameEngine.MakeAStep(p0, p1), result);
         }
         
         [Then(@"The value of the cell in x = (.*) y = (.*) must equal the value of the player token with id = (.*)")]

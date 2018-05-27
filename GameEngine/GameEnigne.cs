@@ -74,6 +74,7 @@ namespace GameEngine
 
         public GameEngine()
         {
+            this.SetStep(0);
             this.SetGamePlace(new string[0, 0]);
             this.SetPlayers(new ArrayList());
         }
@@ -205,7 +206,31 @@ namespace GameEngine
 
         public bool MakeAStep(int x, int y)
         {
-            return true;
+            int step = this.GetStep();
+            Player currentPlayer = new Player();
+            int count = 0;
+            foreach (Player player in this.GetPlayers())
+            {
+                if (count == step)
+                {
+                    currentPlayer = player;
+                    break;
+                }
+                count++;
+            }
+
+            bool result = this.SetCellValue(x, y, currentPlayer.GetToken());
+            
+            if (step == this.GetNumberOfPlayers() - 1)
+            {
+                step = 0;
+            } else
+            {
+                step++;
+            }
+            this.SetStep(step);
+
+            return result;
         }
     }
 }
