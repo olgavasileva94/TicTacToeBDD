@@ -235,7 +235,74 @@ namespace GameEngine
 
         public bool IsWin()
         {
-            return true;
+            String[,] gamePlace = this.GetGamePlace();
+            int size = this.GetSizeGamePlace();
+
+            String token1 = "1";
+            String token2 = "2";
+
+            int count = 0;
+            foreach (Player player in this.GetPlayers())
+            {
+                if (count == 0)
+                {
+                    token1 = player.GetToken();
+                }
+                if (count == 1)
+                {
+                    token2 = player.GetToken();
+                    break;
+                }
+
+                count++;
+            }
+
+            for (int i = 0; i < size; i ++)
+            {
+                bool DiaWinT1 = true;
+                bool HorWinT1 = true;
+                bool VerWinT1 = true;
+                bool DiaWinT2 = true;
+                bool HorWinT2 = true;
+                bool VerWinT2 = true;
+                for (int j = 0; j < size; j++)
+                {
+                    if (gamePlace[i, j] != token1)
+                    {
+                        HorWinT1 = false;
+                    }
+                    if (gamePlace[j, i] != token1)
+                    {
+                        VerWinT1 = false;
+                    }
+                    if (gamePlace[j, j] != token1)
+                    {
+                        DiaWinT1 = false;
+                    }
+                    if (gamePlace[i, j] != token2)
+                    {
+                        HorWinT2 = false;
+                    }
+                    if (gamePlace[j, i] != token2)
+                    {
+                        VerWinT2 = false;
+                    }
+                    if (gamePlace[j, j] != token2)
+                    {
+                        DiaWinT2 = false;
+                    }
+                }
+                if (HorWinT1 == true || VerWinT1 == true || DiaWinT1 == true)
+                {
+                    return true;
+                }
+                if (HorWinT2 == true || VerWinT2 == true || DiaWinT2 == true)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public Player GetWinPlayer()
