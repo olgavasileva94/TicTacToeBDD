@@ -155,28 +155,41 @@ namespace GameEngine
 
         public void CreateGamePlace(int size = 3)
         {
-            this.gamePlace = new string[0, 0];
+            this.gamePlace = new string[size, size];
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    this.gamePlace[i, j] = "";
+                }
+            }
         }
 
         public void ClearGamePlace()
         {
             int size = this.GetSizeGamePlace();
-            this.gamePlace = new string[size, size];
+            this.CreateGamePlace(size);
         }
 
         public int GetSizeGamePlace()
         {
-            return 0;
+            return (int) System.Math.Sqrt(this.gamePlace.Length);
         }
 
-        public bool SetCellValue(int x, int y)
+        public bool SetCellValue(int x, int y, String value)
         {
+            if (this.GetCellValue(x, y) != "")
+            {
+                return false;
+            }
+            this.gamePlace[x, y] = value;
+
             return true;
         }
 
         public String GetCellValue(int x, int y)
         {
-            return "0";
+            return this.gamePlace[x, y];
         }
     }
 }
