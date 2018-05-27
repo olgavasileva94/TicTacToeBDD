@@ -67,19 +67,39 @@ namespace GameEngine
     public class GameEngine
     {
         private ArrayList players;
+        private String[,] gamePlace;
 
         //constructors
 
         public GameEngine()
         {
-            this.players = new ArrayList();
+            this.SetGamePlace(new string[0, 0]);
+            this.SetPlayers(new ArrayList());
         }
 
         //setters
 
+        private void SetGamePlace(String[,] gamePlace)
+        {
+            this.gamePlace = gamePlace;
+        }
+
+        private void SetPlayers(ArrayList players)
+        {
+            this.players = players;
+        }
 
         //getters
 
+        private String[,] GetGamePlace()
+        {
+            return this.gamePlace;
+        }
+
+        private ArrayList GetPlayers()
+        {
+            return this.players;
+        }
 
         //methods
 
@@ -90,14 +110,14 @@ namespace GameEngine
                 return false;
             }
 
-            this.players.Add(new Player(name, token, id));
+            this.GetPlayers().Add(new Player(name, token, id));
 
             return true;
         }
 
         public bool PlayerExist(int id)
         {
-            foreach (Player player in this.players)
+            foreach (Player player in this.GetPlayers())
             {
                 if (player.GetId() == id)
                 {
@@ -110,7 +130,7 @@ namespace GameEngine
 
         public Player GetPlayer(int id)
         {
-            foreach (Player player in this.players)
+            foreach (Player player in this.GetPlayers())
             {
                 if (player.GetId() == id)
                 {
@@ -123,12 +143,40 @@ namespace GameEngine
 
         public int GetNumberOfPlayers()
         {
-            return this.players.Count;
+            return this.GetPlayers().Count;
         }
 
         public void ClearPlayers()
         {
-            this.players.Clear();
+            ArrayList players = this.GetPlayers();
+            players.Clear();
+            this.SetPlayers(players);
+        }
+
+        public void CreateGamePlace(int size = 3)
+        {
+            this.gamePlace = new string[0, 0];
+        }
+
+        public void ClearGamePlace()
+        {
+            int size = this.GetSizeGamePlace();
+            this.gamePlace = new string[size, size];
+        }
+
+        public int GetSizeGamePlace()
+        {
+            return 0;
+        }
+
+        public bool SetCellValue(int x, int y)
+        {
+            return true;
+        }
+
+        public String GetCellValue(int x, int y)
+        {
+            return "0";
         }
     }
 }

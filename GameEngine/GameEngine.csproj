@@ -55,7 +55,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\Creater game place.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Creater game place.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Steps\AddingPlayersSteps.cs" />
+    <Compile Include="Features\Steps\CreateGamePlaceSteps.cs" />
     <Compile Include="GameEnigne.cs" />
     <Compile Include="Features\Adding players.feature.cs">
       <AutoGen>True</AutoGen>
@@ -69,6 +75,10 @@
     <None Include="Features\Adding players.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Adding players.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Creater game place.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Creater game place.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
