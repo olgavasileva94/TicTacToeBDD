@@ -67,58 +67,68 @@ namespace GameEngine
     public class GameEngine
     {
         private ArrayList players;
-        private int numberOfPlayers;
 
         //constructors
 
         public GameEngine()
         {
             this.players = new ArrayList();
-            this._SetNumberOfPlayers(0);
         }
 
         //setters
 
-        private void _SetNumberOfPlayers(int numberOfPlayers)
-        {
-            this.numberOfPlayers = numberOfPlayers;
-        }
 
         //getters
 
-        private int _GetNumberOfPlayers()
-        {
-            return this.numberOfPlayers;
-        }
 
         //methods
 
         public bool AddPlayer(String name = "", String token = "", int id = 0)
         {
-            if (this._GetNumberOfPlayers() == 2)
+            if (this.GetNumberOfPlayers() == 2)
             {
                 return false;
             }
-            this._SetNumberOfPlayers(this._GetNumberOfPlayers() + 1);
+
+            this.players.Add(new Player(name, token, id));
 
             return true;
         }
 
+        public bool PlayerExist(int id)
+        {
+            foreach (Player player in this.players)
+            {
+                if (player.GetId() == id)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public Player GetPlayer(int id)
         {
-            Player player = new Player();
+            foreach (Player player in this.players)
+            {
+                if (player.GetId() == id)
+                {
+                    return player;
+                }
+            }
 
-            return player;
+            throw new Exception("Player not foud");
         }
 
         public int GetNumberOfPlayers()
         {
-            return this._GetNumberOfPlayers();
+            return this.players.Count;
         }
 
         public void ClearPlayers()
         {
-            this._SetNumberOfPlayers(0);
+            this.players.Clear();
         }
     }
 }

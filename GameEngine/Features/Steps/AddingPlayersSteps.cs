@@ -52,6 +52,7 @@ namespace GameEngine.Features.Steps
         [Then(@"The game engine must contain a player with parameters \(name = ""(.*)"" token = ""(.*)"" id = (.*)\)")]
         public void ThenTheGameEngineMustContainAPlayerWithParametersNameTokenId(string p0, string p1, int p2)
         {
+            Assert.AreEqual(this.gameEngine.PlayerExist(p2), true);
             Player player = this.gameEngine.GetPlayer(p2);
             Assert.AreEqual(player.GetName(), p0);
             Assert.AreEqual(player.GetToken(), p1);
