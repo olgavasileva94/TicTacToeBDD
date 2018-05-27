@@ -23,3 +23,17 @@ Scenario: Add 3 player
 	And No players in game engine
 	When I add 3 player to game engine
 	Then Game engine should contains 2 player
+
+@add player with parameters (name = "player1" token = "token1" id = 1)
+Scenario: Add player with parameters (name = "player1" token = "token1" id = 1)
+	Given I have a game engine
+	And No players in game engine
+	When I add a player with parameters (name = "player1" token = "token1" id = 1) to the game engine
+	Then The game engine must contain a player with parameters (name = "player1" token = "token1" id = 1)
+
+@add player with parameters (name = "player2" token = "token2" id = 2)
+Scenario: Add player with parameters (name = "player2" token = "token2" id = 2)
+	Given I have a game engine
+	And No players in game engine
+	When I add a player with parameters (name = "player2" token = "token2" id = 2) to the game engine
+	Then The game engine must contain a player with parameters (name = "player2" token = "token2" id = 2)

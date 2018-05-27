@@ -138,6 +138,100 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Add player with parameters (name = \"player1\" token = \"token1\" id = 1)")]
+        [NUnit.Framework.CategoryAttribute("add")]
+        [NUnit.Framework.CategoryAttribute("player")]
+        [NUnit.Framework.CategoryAttribute("with")]
+        [NUnit.Framework.CategoryAttribute("parameters")]
+        [NUnit.Framework.CategoryAttribute("(name")]
+        [NUnit.Framework.CategoryAttribute("=")]
+        [NUnit.Framework.CategoryAttribute("\"player1\"")]
+        [NUnit.Framework.CategoryAttribute("token")]
+        [NUnit.Framework.CategoryAttribute("=")]
+        [NUnit.Framework.CategoryAttribute("\"token1\"")]
+        [NUnit.Framework.CategoryAttribute("id")]
+        [NUnit.Framework.CategoryAttribute("=")]
+        [NUnit.Framework.CategoryAttribute("1)")]
+        public virtual void AddPlayerWithParametersNamePlayer1TokenToken1Id1()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add player with parameters (name = \"player1\" token = \"token1\" id = 1)", new string[] {
+                        "add",
+                        "player",
+                        "with",
+                        "parameters",
+                        "(name",
+                        "=",
+                        "\"player1\"",
+                        "token",
+                        "=",
+                        "\"token1\"",
+                        "id",
+                        "=",
+                        "1)"});
+#line 28
+this.ScenarioSetup(scenarioInfo);
+#line 29
+ testRunner.Given("I have a game engine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 30
+ testRunner.And("No players in game engine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+ testRunner.When("I add a player with parameters (name = \"player1\" token = \"token1\" id = 1) to the " +
+                    "game engine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+ testRunner.Then("The game engine must contain a player with parameters (name = \"player1\" token = \"" +
+                    "token1\" id = 1)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Add player with parameters (name = \"player2\" token = \"token2\" id = 2)")]
+        [NUnit.Framework.CategoryAttribute("add")]
+        [NUnit.Framework.CategoryAttribute("player")]
+        [NUnit.Framework.CategoryAttribute("with")]
+        [NUnit.Framework.CategoryAttribute("parameters")]
+        [NUnit.Framework.CategoryAttribute("(name")]
+        [NUnit.Framework.CategoryAttribute("=")]
+        [NUnit.Framework.CategoryAttribute("\"player2\"")]
+        [NUnit.Framework.CategoryAttribute("token")]
+        [NUnit.Framework.CategoryAttribute("=")]
+        [NUnit.Framework.CategoryAttribute("\"token2\"")]
+        [NUnit.Framework.CategoryAttribute("id")]
+        [NUnit.Framework.CategoryAttribute("=")]
+        [NUnit.Framework.CategoryAttribute("2)")]
+        public virtual void AddPlayerWithParametersNamePlayer2TokenToken2Id2()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add player with parameters (name = \"player2\" token = \"token2\" id = 2)", new string[] {
+                        "add",
+                        "player",
+                        "with",
+                        "parameters",
+                        "(name",
+                        "=",
+                        "\"player2\"",
+                        "token",
+                        "=",
+                        "\"token2\"",
+                        "id",
+                        "=",
+                        "2)"});
+#line 35
+this.ScenarioSetup(scenarioInfo);
+#line 36
+ testRunner.Given("I have a game engine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 37
+ testRunner.And("No players in game engine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+ testRunner.When("I add a player with parameters (name = \"player2\" token = \"token2\" id = 2) to the " +
+                    "game engine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 39
+ testRunner.Then("The game engine must contain a player with parameters (name = \"player2\" token = \"" +
+                    "token2\" id = 2)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

@@ -42,5 +42,20 @@ namespace GameEngine.Features.Steps
         {
             Assert.AreEqual(this.gameEngine.GetNumberOfPlayers(), p0);
         }
+
+        [When(@"I add a player with parameters \(name = ""(.*)"" token = ""(.*)"" id = (.*)\) to the game engine")]
+        public void WhenIAddAPlayerWithParametersNameTokenIdToTheGameEngine(string p0, string p1, int p2)
+        {
+            Assert.AreEqual(this.gameEngine.AddPlayer(p0, p1, p2), true);
+        }
+
+        [Then(@"The game engine must contain a player with parameters \(name = ""(.*)"" token = ""(.*)"" id = (.*)\)")]
+        public void ThenTheGameEngineMustContainAPlayerWithParametersNameTokenId(string p0, string p1, int p2)
+        {
+            Player player = this.gameEngine.GetPlayer(p2);
+            Assert.AreEqual(player.GetName(), p0);
+            Assert.AreEqual(player.GetToken(), p1);
+            Assert.AreEqual(player.GetId(), p2);
+        }
     }
 }
