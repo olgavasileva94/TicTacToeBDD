@@ -18,6 +18,7 @@ namespace GameEngine.Features.Steps
         [Given(@"No players in game engine")]
         public void GivenNoPlayersInGameEngine()
         {
+            this.gameEngine.ClearPlayers();
             Assert.AreEqual(this.gameEngine.GetNumberOfPlayers(), 0);
         }
         
