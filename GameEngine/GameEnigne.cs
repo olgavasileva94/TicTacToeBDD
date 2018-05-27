@@ -232,5 +232,33 @@ namespace GameEngine
 
             return result;
         }
+
+        public bool IsWin()
+        {
+            return true;
+        }
+
+        public Player GetWinPlayer()
+        {
+            int step = this.GetStep();
+            if (step != 0)
+            {
+                step = step - 1;
+            }
+
+            Player currentPlayer = new Player();
+            int count = 0;
+            foreach (Player player in this.GetPlayers())
+            {
+                if (count == step)
+                {
+                    currentPlayer = player;
+                    break;
+                }
+                count++;
+            }
+
+            return currentPlayer;
+        }
     }
 }

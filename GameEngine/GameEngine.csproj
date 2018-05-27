@@ -55,6 +55,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\Checking winnings.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Checking winnings.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Creater game place.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,6 +71,7 @@
       <DependentUpon>Set cell value on game place.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Steps\AddingPlayersSteps.cs" />
+    <Compile Include="Features\Steps\CheckingWinningsSteps.cs" />
     <Compile Include="Features\Steps\CreateGamePlaceSteps.cs" />
     <Compile Include="Features\Make a step.feature.cs">
       <AutoGen>True</AutoGen>
@@ -87,6 +93,10 @@
     <None Include="Features\Adding players.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Adding players.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Checking winnings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Checking winnings.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Creater game place.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
