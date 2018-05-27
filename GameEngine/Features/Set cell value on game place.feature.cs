@@ -145,6 +145,39 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Set value in a busy cell")]
+        [NUnit.Framework.CategoryAttribute("set")]
+        [NUnit.Framework.CategoryAttribute("value")]
+        [NUnit.Framework.CategoryAttribute("in")]
+        [NUnit.Framework.CategoryAttribute("a")]
+        [NUnit.Framework.CategoryAttribute("busy")]
+        [NUnit.Framework.CategoryAttribute("cell")]
+        public virtual void SetValueInABusyCell()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Set value in a busy cell", new string[] {
+                        "set",
+                        "value",
+                        "in",
+                        "a",
+                        "busy",
+                        "cell"});
+#line 23
+this.ScenarioSetup(scenarioInfo);
+#line 24
+ testRunner.Given("I have a game engine", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 25
+ testRunner.When("I create game place size 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+ testRunner.And("I set the cell value x = 2 y = 0 to value \"y\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.Then("The game place should be the size 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 28
+ testRunner.And("If you set values to a busy cell x = 2 y = 0 value \"y\" i get false", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

@@ -18,3 +18,11 @@ Scenario: Set cell x = 2 y = 0 value "y"
 	And I set the cell value x = 2 y = 0 to value "y"
 	Then The game place should be the size 3
 	And The value of the cell in x = 2 y = 0 must be "y"
+
+@set value in a busy cell
+Scenario: Set value in a busy cell
+	Given I have a game engine
+	When I create game place size 3
+	And I set the cell value x = 2 y = 0 to value "y"
+	Then The game place should be the size 3
+	And If you set values to a busy cell x = 2 y = 0 value "y" i get false

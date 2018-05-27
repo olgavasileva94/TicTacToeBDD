@@ -18,5 +18,11 @@ namespace GameEngine.Features.Steps
         {
             Assert.AreEqual(AddingPlayersSteps.gameEngine.GetCellValue(p0, p1), p2);
         }
+
+        [Then(@"If you set values to a busy cell x = (.*) y = (.*) value ""(.*)"" i get false")]
+        public void ThenIfYouSetValuesToABusyCellXYValueIGetFalse(int p0, int p1, string p2)
+        {
+            Assert.AreEqual(AddingPlayersSteps.gameEngine.SetCellValue(p0, p1, p2), false);
+        }
     }
 }
